@@ -1,13 +1,15 @@
-import { ArrowBack } from '@mui/icons-material';
+import { ArrowCircleLeft } from '@mui/icons-material';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
+import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Rating from '@mui/material/Rating';
 import createTheme from '@mui/material/styles/createTheme';
 import responsiveFontSizes from '@mui/material/styles/responsiveFontSizes';
 import styled from '@mui/material/styles/styled';
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
+import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -55,14 +57,16 @@ export default function Detail({}: Props) {
     <ThemeProvider theme={theme}>
       <Box sx={{ mt: 5 }}>
         <Paper sx={{ p: 2, margin: "auto", maxWidth: 600, flexGrow: 1 }}>
-          <IconButton
-            aria-label="back"
-            size="large"
-            color="primary"
-            onClick={handleClick}
-          >
-            <ArrowBack fontSize="inherit" />
-          </IconButton>
+          <Tooltip title="Назад" placement="right">
+            <IconButton
+              aria-label="back"
+              size="large"
+              color="primary"
+              onClick={handleClick}
+            >
+              <ArrowCircleLeft fontSize="inherit" />
+            </IconButton>
+          </Tooltip>
 
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
@@ -148,6 +152,25 @@ export default function Detail({}: Props) {
                   >
                     {detailCard[0].saleInfo?.retailPrice?.amount} грн
                   </Box>
+                  <Box
+                    sx={{
+                      mt: 4,
+                      ml: 1,
+                      textAlign: "left",
+                      fontSize: 16,
+                      color: "blue",
+                    }}
+                  >
+                    <Link
+                      href={detailCard[0].accessInfo?.webReaderLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      underline="hover"
+                    >
+                      Читать PDF <br />
+                      на play.google.com
+                    </Link>
+                  </Box>
                 </Box>
               )}
             </Grid>
@@ -155,14 +178,17 @@ export default function Detail({}: Props) {
               {detailCard[0].volumeInfo.description}
             </Typography>
           </Grid>
-          <IconButton
-            aria-label="back"
-            size="large"
-            color="primary"
-            onClick={handleClick}
-          >
-            <ArrowBack fontSize="inherit" />
-          </IconButton>
+
+          <Tooltip title="Назад" placement="right">
+            <IconButton
+              aria-label="back"
+              size="large"
+              color="primary"
+              onClick={handleClick}
+            >
+              <ArrowCircleLeft fontSize="inherit" />
+            </IconButton>
+          </Tooltip>
         </Paper>
       </Box>
     </ThemeProvider>

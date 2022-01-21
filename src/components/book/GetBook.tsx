@@ -114,7 +114,7 @@ export default function GetBook({}: Props): ReactElement {
                   alignItems="center"
                 >
                   {getBooks?.map((item, ind) => (
-                    <Box sx={{ m: 1 }} key={item.id}>
+                    <Box sx={{ m: 1 }} key={ind}>
                       <BookCard
                         id={item.id}
                         author={item.volumeInfo.authors}
