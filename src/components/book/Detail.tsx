@@ -53,10 +53,17 @@ export default function Detail({}: Props) {
   };
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ mt: 10 }}>
+      <Box sx={{ mt: 5 }}>
         <Paper sx={{ p: 2, margin: "auto", maxWidth: 600, flexGrow: 1 }}>
-          {/* <Typography variant="h4">ДЕТАЛИ</Typography>
-        <Typography variant="h6">для id={param.id?.slice(1)}</Typography> */}
+          <IconButton
+            aria-label="back"
+            size="large"
+            color="primary"
+            onClick={handleClick}
+          >
+            <ArrowBack fontSize="inherit" />
+          </IconButton>
+
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <Img
