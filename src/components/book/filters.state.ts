@@ -149,7 +149,7 @@ export const FilterBookAtom = atom<FilterBook>({
   default: {
     priceMin: 0,
     priceMax: 500,
-    inAuthor: "",
+    inAuthor: "Стивен Кинг",
     inTitle: "",
   },
 });

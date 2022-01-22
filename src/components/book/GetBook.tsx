@@ -1,5 +1,5 @@
 import { FilterList } from '@mui/icons-material';
-import { Box, Grid, Skeleton, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import createTheme from '@mui/material/styles/createTheme';
 import responsiveFontSizes from '@mui/material/styles/responsiveFontSizes';
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
@@ -8,12 +8,12 @@ import _ from 'lodash';
 import React, { ReactElement, useCallback, useEffect, useState } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 
-import { Book } from '../../types/book.type';
 import AuthorTitleFilter from './AuthorTitleFilter';
 import BookCard from './BookCard';
 import { booksStateAtom, FilterBook, FilterBookAtom, filterBooksList, filterBooksListSelector } from './filters.state';
 import PriceFilter from './PriceFilter';
 import SaleabilityFilter from './SaleabilityFilter';
+import SceletonCard from './SceletonCard';
 
 interface Props {}
 
@@ -29,7 +29,7 @@ export default function GetBook({}: Props): ReactElement {
   const [filter, setFilter] = useRecoilState(filterBooksList);
 
   const [isLoading, setIsLoading] = useState(true);
-  const [loadBook, setLoadBook] = useState<Book[]>([]);
+  // const [loadBook, setLoadBook] = useState<Book[]>([]);
 
   const inAuthor = globalFilter.inAuthor;
   const inTitle = globalFilter.inTitle;
@@ -97,12 +97,7 @@ export default function GetBook({}: Props): ReactElement {
           <Grid item xs={12} sm={7} md={8} lg={9} xl={11}>
             {isLoading ? (
               <Box>
-                <Skeleton
-                  variant="rectangular"
-                  width="100%"
-                  height={200}
-                  animation="wave"
-                />
+                <SceletonCard n={28} width={160} height={300} />
               </Box>
             ) : (
               <Box sx={{ pl: 3, pt: 2 }}>
