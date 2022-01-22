@@ -11,11 +11,12 @@ import styled from '@mui/material/styles/styled';
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
-import React from 'react';
+import React, { useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 
 import { filterBooksListSelector } from './filters.state';
+import { useScrollToTop } from './utils';
 
 type Props = {};
 
@@ -53,8 +54,12 @@ export default function Detail({}: Props) {
   const handleClick = () => {
     navigate("/");
   };
+
+  const setScrollToTop = useScrollToTop(true);
+
   return (
     <ThemeProvider theme={theme}>
+      <div onClick={() => setScrollToTop(true)}></div>
       <Box sx={{ mt: 5 }}>
         <Paper sx={{ p: 2, margin: "auto", maxWidth: 600, flexGrow: 1 }}>
           <Tooltip title="Назад" placement="right">
