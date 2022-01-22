@@ -2,13 +2,9 @@ import { Box, Grid } from '@mui/material';
 import Skeleton from '@mui/material/Skeleton';
 import React, { ReactElement } from 'react';
 
-interface Props {
-  n: number;
-  width: number;
-  height: number;
-}
+interface Props {}
 
-export default function SceletonCard({ n, width, height }: Props) {
+export default function SceletonCard({}: Props) {
   return (
     <Box
       sx={{
@@ -17,33 +13,19 @@ export default function SceletonCard({ n, width, height }: Props) {
         alignContent: "space-between",
         flexDirection: "row",
         flexWrap: "wrap",
-        // m: 0.5,
-        // p: 1,
       }}
     >
-      {Array(n)
+      {Array(28) //массив из 28 карточек
         .fill("")
         .map((item, ind) => (
           <Box sx={{ m: 1 }} key={ind}>
-            {/* <Skeleton variant="text" />
-          <Skeleton variant="circular" width={40} height={40} />{" "} */}
-            {/* <Skeleton
-              variant="rectangular"
-              width={width}
-              height={height}
-              sx={{ m: 1 }}
-            /> */}
             <Skeleton
               height={220}
-              width={width}
+              width={160}
               animation="wave"
               variant="rectangular"
             />
-            <Skeleton
-              animation="wave"
-              height={20}
-              // style={{ marginBottom: 6 }}
-            />
+            <Skeleton animation="wave" height={20} />
             <Skeleton animation="wave" height={20} width="100%" />
             <Grid
               container
@@ -60,21 +42,3 @@ export default function SceletonCard({ n, width, height }: Props) {
     </Box>
   );
 }
-
-/* 
-           <Skeleton
-              sx={{ height: 220 }}
-              animation="wave"
-              variant="rectangular"
-            />
-
-            <Skeleton
-              animation="wave"
-              height={20}
-              style={{ marginBottom: 6 }}
-            />
-            <Skeleton animation="wave" height={20} width="100%" />
-            <Skeleton animation="wave" height={20} width="100%" />
-            <Skeleton animation="wave" height={20} width="100%" />
-
-*/

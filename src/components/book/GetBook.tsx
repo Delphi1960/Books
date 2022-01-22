@@ -97,7 +97,7 @@ export default function GetBook({}: Props): ReactElement {
           <Grid item xs={12} sm={7} md={8} lg={9} xl={11}>
             {isLoading ? (
               <Box>
-                <SceletonCard n={28} width={160} height={300} />
+                <SceletonCard />
               </Box>
             ) : (
               <Box sx={{ pl: 3, pt: 2 }}>
