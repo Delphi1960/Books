@@ -8,6 +8,8 @@ import Typography from '@mui/material/Typography';
 import React, { ReactElement, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import stars from './stars.gif';
+
 interface Props {
   id: string;
   author: string[];
@@ -59,7 +61,7 @@ export default function BookCard({
           height="220"
           image={
             // cardBook.volumeInfo?.imageLinks?.thumbnail ??
-            thumbnail ?? "https://cherry.org.ua/images/a.gif"
+            thumbnail ?? stars
           }
         />
       </CardActionArea>

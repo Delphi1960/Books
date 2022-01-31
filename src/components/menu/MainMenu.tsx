@@ -19,6 +19,8 @@ import LoginForm from '../authorization/LoginForm';
 import RegistrationForm from '../authorization/RegistrationForm';
 import Detail from '../book/Detail';
 import GetBook from '../book/GetBook';
+import Home from '../Home';
+import Wether from '../wether/Wether';
 import ListMenu from './ListMenu';
 
 //import { authState } from './store';
@@ -171,7 +173,9 @@ export default function MainMenu() {
           </Box>
         </SwipeableDrawer>
         <Routes>
-          <Route path="/" element={<GetBook />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/book" element={<GetBook />} />
+          <Route path="/wether" element={<Wether />} />
           <Route path="/sign_in" element={<LoginForm />} />
           <Route path="/detail:id" element={<Detail />} />
           <Route path="/registration" element={<RegistrationForm />} />

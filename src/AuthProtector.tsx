@@ -27,7 +27,7 @@ export default function AuthProtector({ children }: Props): ReactElement {
         setAuth({ user: response.data, isAuthed: true });
         navigate(location.pathname);
       } catch (error) {
-        navigate("/sign_in");
+        // navigate("/sign_in");!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         setIsBootStrapping(false);
       }
     };

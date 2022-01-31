@@ -1,4 +1,4 @@
-import { AccountBalance } from '@mui/icons-material';
+import { AccountBalance, Brightness4, MenuBook } from '@mui/icons-material';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -29,21 +29,37 @@ export default function ListMenu({}: Props): ReactElement {
         </ListItemIcon>
         <ListItemText primary={"Home"} sx={{ color: isActiveFontColor("/") }} />
       </ListItem>
+
       {/* =============================================================================== */}
-      {/* <ListItem
+      <ListItem
         button
-        selected={location.pathname === "/form"}
+        selected={location.pathname === "/book"}
         component={Link}
-        to="/form"
+        to="/book"
       >
         <ListItemIcon>
-          <AccountBalance color={isActive("/form")} />
+          <MenuBook color={isActive("/book")} />
         </ListItemIcon>
         <ListItemText
-          primary={"Форма"}
-          sx={{ color: isActiveFontColor("/form") }}
+          primary={"Книги"}
+          sx={{ color: isActiveFontColor("/book") }}
         />
-      </ListItem> */}
+      </ListItem>
+      {/* =============================================================================== */}
+      <ListItem
+        button
+        selected={location.pathname === "/wether"}
+        component={Link}
+        to="/wether"
+      >
+        <ListItemIcon>
+          <Brightness4 color={isActive("/wether")} />
+        </ListItemIcon>
+        <ListItemText
+          primary={"Погода"}
+          sx={{ color: isActiveFontColor("/wether") }}
+        />
+      </ListItem>
     </List>
   );
 }
