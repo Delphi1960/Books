@@ -5,7 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Grid';
 import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
-import React, { ReactElement, useEffect, useState } from 'react';
+import React, { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 
 import stars from './stars.gif';
@@ -65,6 +65,7 @@ export default function BookCard({
           }
         />
       </CardActionArea>
+
       <Typography
         gutterBottom
         component="div"
