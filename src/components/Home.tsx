@@ -5,9 +5,7 @@ import React from 'react';
 
 import t1 from './t1.jpg';
 
-type Props = {};
-
-export default function Home({}: Props) {
+export default function Home() {
   return (
     <div>
       <Grid
