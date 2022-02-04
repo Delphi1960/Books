@@ -1,10 +1,10 @@
 import { Box, Grid } from '@mui/material';
 import Skeleton from '@mui/material/Skeleton';
-import React, { ReactElement } from 'react';
+import React from 'react';
 
 interface Props {}
 
-export default function SceletonCard({}: Props) {
+export default function SceletonCard() {
   return (
     <Box
       sx={{

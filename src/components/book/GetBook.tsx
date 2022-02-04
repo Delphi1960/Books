@@ -20,7 +20,7 @@ interface Props {}
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
 
-export default function GetBook({}: Props): ReactElement {
+export default function GetBook(): ReactElement {
   const [globalFilter, setGlobalFilter] =
     useRecoilState<FilterBook>(FilterBookAtom);
 

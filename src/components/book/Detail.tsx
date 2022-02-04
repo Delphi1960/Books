@@ -30,7 +30,7 @@ const Img = styled("img")({
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
 
-export default function Detail({}: Props) {
+export default function Detail() {
   const getBooks = useRecoilValue(filterBooksListSelector);
   const param = useParams();
   const navigate = useNavigate();

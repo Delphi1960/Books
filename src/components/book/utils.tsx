@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 /* 
 Скроллинг страницы вверх в любое время (а не только после рендера).

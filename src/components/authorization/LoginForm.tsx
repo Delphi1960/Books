@@ -10,7 +10,7 @@ import React, { ReactElement } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 
-import { authState, isPasswordAtom, rememberMeAtom, userLoginAtom } from '../../state';
+import { authState, isPasswordAtom, userLoginAtom } from '../../state';
 import LogIn from './LogIn';
 
 interface Props {}
@@ -18,12 +18,12 @@ interface Props {}
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
 
-export default function LoginForm({}: Props): ReactElement {
+export default function LoginForm(): ReactElement {
   const [auth, setAuth] = useRecoilState(authState);
 
-  const [userLogin, setUserLogin] = useRecoilState(userLoginAtom);
-  const [password, setPasswordAtom] = useRecoilState(isPasswordAtom);
-  const [rememberMe, setRememberMeAtom] = useRecoilState(rememberMeAtom);
+  const userLogin = useRecoilState(userLoginAtom);
+  const password = useRecoilState(isPasswordAtom);
+  // const [rememberMe, setRememberMeAtom] = useRecoilState(rememberMeAtom);
 
   const navigate = useNavigate();
 

@@ -1,5 +1,5 @@
 import { Checkbox, FormControl, FormControlLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement } from 'react';
 import { useRecoilState } from 'recoil';
 
 import { filterAreAvailable, filterBooksList } from './filters.state';

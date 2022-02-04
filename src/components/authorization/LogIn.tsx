@@ -1,15 +1,13 @@
 import { Checkbox, FormControlLabel, FormGroup, TextField, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement } from 'react';
 import { useRecoilState } from 'recoil';
 
 import { rememberMeAtom, userLoginAtom } from '../../state';
 import Passwrd from './Passwrd';
 
-interface Props {}
-
-export default function LogIn({}: Props): ReactElement {
+export default function LogIn(): ReactElement {
   const [userLogin, setUserLogin] = useRecoilState(userLoginAtom);
   const [rememberMe, setRememberMeAtom] = useRecoilState(rememberMeAtom);
 

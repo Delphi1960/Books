@@ -1,12 +1,12 @@
 import { Box, TextField } from '@mui/material';
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement } from 'react';
 import { useRecoilState } from 'recoil';
 
 import { FilterBook, FilterBookAtom } from './filters.state';
 
 interface Props {}
 
-export default function AuthorTitleFilter({}: Props): ReactElement {
+export default function AuthorTitleFilter(): ReactElement {
   const [globalFilter, setGlobalFilter] =
     useRecoilState<FilterBook>(FilterBookAtom);
 

@@ -1,7 +1,7 @@
 import { Checkbox, FormControlLabel, FormGroup, TextField, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement } from 'react';
 import { useRecoilState } from 'recoil';
 
 import { eMailAtom, rememberMeAtom, userLoginAtom } from '../../state';

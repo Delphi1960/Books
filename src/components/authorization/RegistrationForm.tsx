@@ -10,7 +10,7 @@ interface Props {}
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
 
-export default function RegistrationForm({}: Props): ReactElement {
+export default function RegistrationForm(): ReactElement {
   // const [auth, setAuth] = useRecoilState(authState);
 
   const userLogin = useRecoilState(userLoginAtom);
