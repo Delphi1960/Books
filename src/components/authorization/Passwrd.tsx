@@ -7,7 +7,7 @@ import { isPasswordAtom } from '../../state';
 
 interface Props {}
 
-export default function Passwrd({}: Props): ReactElement {
+export default function Passwrd(): ReactElement {
   const [showPasw, setShowPasw] = useState(false);
   const [password, setPasswordAtom] = useRecoilState(isPasswordAtom);
 

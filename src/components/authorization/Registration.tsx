@@ -9,7 +9,7 @@ import Passwrd from './Passwrd';
 
 interface Props {}
 
-export default function Registration({}: Props): ReactElement {
+export default function Registration(): ReactElement {
   const [userLogin, setUserLogin] = useRecoilState(userLoginAtom);
   const [eMail, setEmailAtom] = useRecoilState(eMailAtom);
   //const [password, setPassword] = useRecoilState(isPasswordAtom);

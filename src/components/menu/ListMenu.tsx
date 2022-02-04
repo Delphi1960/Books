@@ -8,7 +8,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 interface Props {}
 
-export default function ListMenu({}: Props): ReactElement {
+export default function ListMenu(): ReactElement {
   const location = useLocation();
   const isActive = (path: string) =>
     location.pathname === path ? "primary" : "inherit";

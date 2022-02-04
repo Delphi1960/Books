@@ -3,7 +3,7 @@ import React, { ReactElement } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 
-import { authState, eMailAtom, isPasswordAtom, rememberMeAtom, userLoginAtom } from '../../state';
+import { eMailAtom, isPasswordAtom, rememberMeAtom, userLoginAtom } from '../../state';
 import Registration from './Registration';
 
 interface Props {}
@@ -11,12 +11,12 @@ let theme = createTheme();
 theme = responsiveFontSizes(theme);
 
 export default function RegistrationForm({}: Props): ReactElement {
-  const [auth, setAuth] = useRecoilState(authState);
+  // const [auth, setAuth] = useRecoilState(authState);
 
-  const [userLogin, setUserLogin] = useRecoilState(userLoginAtom);
-  const [eMail, setEmaiAtom] = useRecoilState(eMailAtom);
-  const [password, setPasswordAtom] = useRecoilState(isPasswordAtom);
-  const [rememberMe, setRememberMeAtom] = useRecoilState(rememberMeAtom);
+  const userLogin = useRecoilState(userLoginAtom);
+  const eMail = useRecoilState(eMailAtom);
+  const password = useRecoilState(isPasswordAtom);
+  const rememberMe = useRecoilState(rememberMeAtom);
 
   const navigate = useNavigate();
 
