@@ -21,6 +21,7 @@ import Detail from '../book/Detail';
 import GetBook from '../book/GetBook';
 import Home from '../Home';
 import Wether from '../wether/Wether';
+import User from './02.jpg';
 import ListMenu from './ListMenu';
 
 //import { authState } from './store';
@@ -110,10 +111,7 @@ export default function MainMenu() {
                   color="inherit"
                 >
                   {/* <AccountCircle /> */}
-                  <Avatar
-                    alt="Remy Sharp"
-                    src="https://cherry.org.ua/images/02.jpg"
-                  />
+                  <Avatar alt="Remy Sharp" src={User} />
                 </IconButton>
               </Tooltip>
 

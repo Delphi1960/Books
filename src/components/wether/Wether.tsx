@@ -16,7 +16,16 @@ export default function Wether({}: Props) {
     setIsLoading(true);
     try {
       const response = await axios.get(
-        `http://api.openweathermap.org/data/2.5/weather?q=Одеса,ua&units=metric&APPID=ba70f668d22d5358ad51d7723c6ae867&lang=ru`
+        `http://api.openweathermap.org/data/2.5/weather?q=Одеса,ua&units=metric&APPID=ba70f668d22d5358ad51d7723c6ae867&lang=ru`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            //authorization: "Bearer APPID=ba70f668d22d5358ad51d7723c6ae867",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "*",
+            "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+          },
+        }
         // `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=Одеса,ua&units=metric&APPID=ba70f668d22d5358ad51d7723c6ae867&lang=ru`
       );
       // setLoadWether(response.data.totalItems > 0 ? response.data.items : []);
